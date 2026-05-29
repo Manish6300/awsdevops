@@ -5,6 +5,12 @@
 	<meta charset="UTF-8">
 	<title>Law Firm</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
 </head>
 <body>
 	<div id="header">
@@ -40,7 +46,20 @@
 	<div id="contents">
 		<div id="adbox">
 			<div class="clearfix">
-				<img src="images/varunimg.jpeg" alt="Img" height="382" width="594">
+
+<div style="width:100%; overflow:hidden; white-space:nowrap;">
+  <div style="display:flex; animation:scroll 10s linear infinite; width:max-content;">
+
+   
+    <img src="images/varunimg.jpeg" style="width:200px;height:150px;object-fit:cover;margin-right:10px;">
+
+    <!-- duplicate for smooth loop -->
+    <img src="images/varunimg.jpeg" style="width:200px;height:150px;object-fit:cover;margin-right:10px;">
+   
+
+  </div>
+</div>
+				
 				<div class="detail">
 					<h1>It’s never easy...<br> When it comes to family.</h1>
 					<p>

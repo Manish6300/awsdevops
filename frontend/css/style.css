@@ -545,6 +545,16 @@ p a:hover {
 	cursor: pointer;
 	border: none;
 }
+.form-status {
+	font-weight: bold;
+	margin-top: 14px;
+}
+.form-status.success {
+	color: #4e5944;
+}
+.form-status.error {
+	color: #9b2f2f;
+}
 /*------------ FOOTER ------------*/
 #footer {
 	background: #d9d9d9 url(../images/bg-footer.png) repeat-x left top;

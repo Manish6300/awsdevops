@@ -5,8 +5,12 @@
 	<meta charset="UTF-8">
 	<title>Law Firm</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script src="js/api.js"></script>
 </head>
 <body>
+	<div id="backend-status-bar">
+		<div id="backend-status">⏳ Checking backend connection...</div>
+	</div>
 	<div id="header">
 		<div class="clearfix">
 			<div class="logo">
@@ -154,5 +158,19 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		(function () {
+			var el = document.getElementById('backend-status');
+			getBackendStatus()
+				.then(function (data) {
+					el.textContent = '\u2705 ' + data.message;
+					el.className = 'status-success';
+				})
+				.catch(function () {
+					el.textContent = '\u274c Failed to connect to backend';
+					el.className = 'status-error';
+				});
+		}());
+	</script>
 </body>
 </html>

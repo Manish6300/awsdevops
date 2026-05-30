@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Book a Lawyer - Law Firm</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script src="js/api.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -118,25 +119,11 @@
 				status.className = 'form-status';
 				status.textContent = 'Sending your request...';
 
-				fetch('/api/book-lawyer', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({
-						name: form.name.value,
-						address: form.address.value,
-						mobile: form.mobile.value
-					})
+				bookLawyer({
+					name: form.name.value,
+					address: form.address.value,
+					mobile: form.mobile.value
 				})
-					.then(function (response) {
-						if (!response.ok) {
-							return response.json().then(function (data) {
-								throw new Error(data.error || 'Unable to send request.');
-							});
-						}
-						return response.json();
-					})
 					.then(function () {
 						form.reset();
 						status.className = 'form-status success';

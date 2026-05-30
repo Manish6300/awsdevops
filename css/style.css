@@ -620,3 +620,24 @@ p a:hover {
 #footnote .connect a.pinterest {
 	background-position: 0 -196px;
 }
+
+/*------------ BACKEND STATUS BAR ------------*/
+#backend-status-bar {
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	padding: 8px 0;
+}
+#backend-status {
+	display: inline-block;
+	font: 13px/20px Arial, Helvetica, sans-serif;
+	color: #626262;
+}
+#backend-status.status-success {
+	color: #4e5944;
+	font-weight: bold;
+}
+#backend-status.status-error {
+	color: #9b2f2f;
+	font-weight: bold;
+}
